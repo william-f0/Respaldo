@@ -1,23 +1,22 @@
 <?php
 
-    if (!isset($_POST["nombre"]) || !isset($_POST["color"])) {
-        exit();
-    }
-
-
     include_once 'connect.php';
 
-    //recuperar valores
-    $nombre=$_POST['nombre'];
-    $color=$_POST['color'];
+    if($_POST){
 
-    $sql = $pdo->prepare("INSERT INTO mascota(nombre,color) VALUES (?,?);");
-    $ejecutar = $sql->execute([$nombre,$color]);
+        //recuperar valores
+        $nombre=$_POST['nombre'];
+        $color=$_POST['color'];
 
-    if($ejecutar === true) {
-        echo "Registro guardado correctamente";
-    } else {
-        echo "Algo salió mal. Por favor verifica que la tabla exista";
+        $sql = $pdo->prepare("INSERT INTO mascota(nombre,color) VALUES (?,?);");
+        $ejecutar = $sql->execute([$nombre,$color]);
+
+        if($ejecutar === true) {
+            header('Location:mascotas.php');
+            echo '<div class="alert alert-success" role="alert">Mascota agregada!</div>';
+        } else {
+            echo '<div class="alert alert-success" role="alert">No se pudo agregar la mascota!</div>';
+        }
     }
 
     

@@ -1,11 +1,15 @@
 <?php
 
-    require_once 'connect.php';
+    $id=$_GET['id'];
+    $nombre=$_GET['nombre'];
+    $color=$_GET['color'];
 
-    $sql = 'SELECT nombre,color,imagen FROM mascota';
-    $ejecutar = $pdo->prepare($sql);
-    $ejecutar->execute();
+    include_once 'connect.php';
 
-    $resultado = $ejecutar->fetchAll();
+    $sql_edit = 'UPDATE mascota SET nombre=?,color=? WHERE (id=?)';
+    $ejecutar_edit = $pdo->prepare($sql_edit);
+    $ejecutar_edit->execute([$nombre,$color.$id]);
+
+    header('Location:mascotas.php');
 
 ?>
