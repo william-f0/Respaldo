@@ -1,0 +1,10 @@
+.enlace{
+    color: white;
+}
+.enlace:hover{
+    color: white;
+    text-decoration: none;
+}
+.formulario{
+    opacity: 0.9;
+}

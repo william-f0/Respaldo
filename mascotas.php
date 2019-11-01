@@ -1,3 +1,10 @@
+<?php
+    //si no a inicio sesión lo redirigira al index para que lo haga
+    session_start();
+    if(!isset($_SESSION['usuario'])){
+        header('Location: index.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Datos</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="estilos.css">
 
 </head>
 <body>
@@ -45,7 +53,8 @@
             <div class="col-4">
                     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Agregar</button><hr>
                     <button type="button" class="btn btn-secondary">Eliminar</button><hr>
-                    <button type="button" class="btn btn-secondary">Editar</button>
+                    <button type="button" class="btn btn-secondary">Editar</button><hr>
+                    <button type="button" class="btn btn-secondary"><a class="enlace" href="cerrar_sesion.php">Salir</a></button>
             </div>
         </div>
 
