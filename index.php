@@ -19,7 +19,7 @@
 <body>
     
     <div class="container d-flex justify-content-center align-items-center">
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-9">
             <h2 class="display-4 p-2 text-center">Inicio</h2>
             <ul class="list-group">
                 <li class="list-group-item text-center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" data-whatever="@mdo">Iniciar sesión</button></li>
@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="formulario modal fade text-center" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="formulario modal fade text-center w-25" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
