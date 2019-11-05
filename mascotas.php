@@ -45,7 +45,7 @@
                 <div class="card-body">
                     <p class="card-text text-center"><?php echo $masco['nombre']; echo '---'.$masco['color']; ?></p>
                     <a href="mascotas.php?id=<?php echo $masco['id'];?>"><button type="button" class="btn btn-success">Editar</button></a>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <a href="eliminar.php?id=<?php echo $masco['id'];?>"><button type="button" class="btn btn-danger">Eliminar</button></a>
                 </div>
             </div>
             <?php endforeach ?>
@@ -92,6 +92,7 @@
                     <a href="mascotas.php"><button type="button" class="btn btn-secondary">Cancelar</button></a>
                 </form>
                 <?php endif ?>
+                
 
                 <button type="button" class="btn btn-danger mt-2"><a class="enlace" href="cerrar_sesion.php">Cerrar Sesión</a></button>
             </div>
