@@ -41,7 +41,7 @@
             <!--Mostrar datos de la base de datos con foreach-->
             <?php foreach($resultado as $masco):?>
             <div class="card ml-3 mt-3" style="width: 18rem;">
-                <img src="imagenes/pit.jpg" class="card-img-top" alt="...">
+                <img src=" data:image/jpg; base64, '.base64_encode($masco['imagen']).'" class="card-img-top" alt="...">
                 <div class="card-body">
                     <p class="card-text text-center"><?php echo $masco['nombre']; echo '---'.$masco['color']; ?></p>
                     <a href="mascotas.php?id=<?php echo $masco['id'];?>"><button type="button" class="btn btn-success">Editar</button></a>
@@ -54,7 +54,7 @@
             <!--Formularios, cambian segun el botón presionado-->
             <div class="col-lg-3 col-md-4 col-sm-5">
                 <?php if(!$_GET): ?>
-                <form action="guardar.php" method="POST">
+                <form action="guardar.php" method="POST" enctype="multipart/form-data">
                     <h3>Agregar Mascota</h3>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Nombre</label>
